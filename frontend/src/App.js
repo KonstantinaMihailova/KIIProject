@@ -68,14 +68,14 @@ function App() {
 
   return (
     <div className="App">
-      <h1>My App</h1>
+      <h1>Library</h1>
 
       <div className="item-form">
-        <h2>{editingItem ? 'Edit Item' : 'Add New Item'}</h2>
+        <h2>{editingItem ? 'Edit Book' : 'Add Book in the library'}</h2>
         <form onSubmit={editingItem ? () => handleUpdateItem(editingItem._id, editingItem) : handleCreateItem}>
           <input
             type="text"
-            placeholder="Item Name"
+            placeholder="Book Name"
             name="name"
             value={editingItem ? editingItem.name : newItemName}
             onChange={editingItem ? handleEditChange : (e) => setNewItemName(e.target.value)}
@@ -83,12 +83,12 @@ function App() {
           />
           <input
             type="text"
-            placeholder="Description (optional)"
+            placeholder="Description"
             name="description"
             value={editingItem ? editingItem.description : newItemDescription}
             onChange={editingItem ? handleEditChange : (e) => setNewItemDescription(e.target.value)}
           />
-          <button type="submit">{editingItem ? 'Update Item' : 'Add Item'}</button>
+          <button type="submit">{editingItem ? 'Update Book' : 'Add Book'}</button>
           {editingItem && <button type="button" onClick={cancelEditing}>Cancel</button>}
         </form>
       </div>
