@@ -6,7 +6,7 @@ let baseURL = "";
 const hostname = window.location.hostname;
 
 if (hostname === "localhost") {
-    baseURL = "http://localhost:5000";
+    baseURL = "http://localhost:4000";
 } else if (hostname === "kiiproject.local") {
     baseURL = "/api";
 } else {
