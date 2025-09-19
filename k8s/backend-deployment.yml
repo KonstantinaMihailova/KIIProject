@@ -17,7 +17,7 @@ spec:
         - name: backend
           image: konstantina261/backend:latest
           ports:
-            - containerPort: 5000
+            - containerPort: 4000
           env:
             - name: MONGO_URI
               valueFrom:

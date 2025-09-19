@@ -6,6 +6,7 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
     - host: kiiproject.local
       http:
@@ -17,10 +18,10 @@ spec:
                 name: frontend-service
                 port:
                   number: 80
-          - path: /api
+          - path: /api(/|$)(.*)
             pathType: Prefix
             backend:
               service:
                 name: backend-service
                 port:
-                  number: 5000
+                  number: 4000
